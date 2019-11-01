@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/top_text" android:id="@+id/top" android:icon="@drawable/ic_home_black_24dp"
+          app:showAsAction="ifRoom"/>
+    <item android:title="@string/lunch_text" android:id="@+id/lunch">
+        <menu
+        >
+            <item android:title="@string/lunch01_text" android:id="@+id/lunch01"/>
+            <item android:title="@string/lunch02_text" android:id="@+id/lunch02"/>
+        </menu>
+    </item>
+    <item android:title="@string/dinner_title" android:id="@+id/dinner">
+        <menu
+        >
+            <item android:title="@string/dinner01_text" android:id="@+id/dinner01"/>
+            <item android:title="@string/dinner02_text" android:id="@+id/dinner02"/>
+        </menu>
+    </item>
+</menu>

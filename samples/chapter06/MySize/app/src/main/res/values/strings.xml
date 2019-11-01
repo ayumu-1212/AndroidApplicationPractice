@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MySize</string>
+    <string name="save_text">保存</string>
+    <string name="height_text">身長</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/sms_text" android:id="@+id/sms"/>
+    <item android:title="@string/mail_text" android:id="@+id/mail"/>
+    <item android:title="@string/share_text" android:id="@+id/share"/>
+    <item android:title="@string/browse_text" android:id="@+id/browse"/>
+</menu>
