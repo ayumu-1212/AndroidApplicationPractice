@@ -106,6 +106,6 @@ class ResultActivety : AppCompatActivity() {
                 }
             }
         }
+        return hand
     }
-    return hand
 }
