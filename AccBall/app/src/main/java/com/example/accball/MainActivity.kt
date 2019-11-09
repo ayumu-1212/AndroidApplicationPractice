@@ -1,6 +1,9 @@
 package com.example.accball
 
 import android.content.Context
+import android.content.pm.ActivityInfo
+import android.graphics.Color
+import android.graphics.Paint
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -25,12 +28,22 @@ class MainActivity : AppCompatActivity(), SensorEventListener, SurfaceHolder.Cal
     private var vy: Float = 0f          // ボールのy方向への加速度
     private var time: Long = 0L         // 前回時間の保持
 
+    private fun drawCanvas() {
+        val canvas = surfaceView.holder.lockCanvas()
+        canvas.drawColor(Color.YELLOW)
+        canvas.drawCircle(ballX, ballY, radius, Paint().apply {
+            color = Color.MAGENTA
+        })
+        surfaceView.holder.unlockCanvasAndPost(canvas)
+    }
+
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
 
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         setContentView(R.layout.activity_main)
         val holder = surfaceView.holder
         holder.addCallback(this)
@@ -62,7 +75,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener, SurfaceHolder.Cal
             val x = -event.values[0]
             val y = event.values[1]
             
-            val t = (System.currentTimeMillis() - time).toFloat()
+            var t = (System.currentTimeMillis() - time).toFloat()
             time = System.currentTimeMillis()
             t /= 1000.0f
             
@@ -105,6 +118,8 @@ class MainActivity : AppCompatActivity(), SensorEventListener, SurfaceHolder.Cal
     override fun surfaceChanged(holder: SurfaceHolder?, format: Int, width: Int, height: Int) {
         surfaceWidth = width
         surfaceHeight = height
+        ballX = (width / 2).toFloat()
+        ballY = (height / 2).toFloat()
     }
 
     override fun surfaceDestroyed(holder: SurfaceHolder?) {
