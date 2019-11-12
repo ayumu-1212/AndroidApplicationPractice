@@ -36,17 +36,26 @@ class ResultActivety : AppCompatActivity() {
         // コンピュータの手を決める
         val comHand = getHand()
         when(comHand) {
-            gu -> comHandImage.setImageResource(R.drawable.com_gu)
-            choki -> comHandImage.setImageResource(R.drawable.com_choki)
-            pa -> comHandImage.setImageResource(R.drawable.com_pa)
+            gu -> comHandImage.setImageResource(R.drawable.gu)
+            choki -> comHandImage.setImageResource(R.drawable.choki)
+            pa -> comHandImage.setImageResource(R.drawable.pa)
         }
 
         // 勝敗を判定する
         val gameResult = (comHand - myHand + 3) % 3
         when(gameResult) {
-            0 -> resultLabel.setText(R.string.result_draw) //引き分け
-            1 -> resultLabel.setText(R.string.result_win)  //勝った場合
-            2 -> resultLabel.setText(R.string.result_lose) //負けた場合
+            0 -> {
+                resultLabel.setText(R.string.result_draw)
+                comImage.setImageResource(R.drawable.draw_kubo)
+            } //引き分け
+            1 -> {
+                resultLabel.setText(R.string.result_win)
+                comImage.setImageResource(R.drawable.win_kubo)
+            }  //勝った場合
+            2 -> {
+                resultLabel.setText(R.string.result_lose)
+                comImage.setImageResource(R.drawable.lose_kubo)
+            } //負けた場合
         }
 
         backButton.setOnClickListener { finish() }

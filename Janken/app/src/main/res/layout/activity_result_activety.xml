@@ -28,17 +28,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gu" />
 
-    <ImageView
-        android:id="@+id/comHandImage"
-        android:layout_width="130dp"
-        android:layout_height="200dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultLabel"
-        app:srcCompat="@drawable/com_gu" />
-
     <Button
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
@@ -46,4 +35,22 @@
         android:text="@string/back_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/comHandImage"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:srcCompat="@drawable/gu"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="316dp" />
+
+    <ImageView
+        android:id="@+id/comImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/lose_kubo"
+        tools:layout_editor_absoluteY="387dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
