@@ -37,7 +37,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-<<<<<<< HEAD
         android:id="@+id/comImage"
         android:layout_width="250dp"
         android:layout_height="250dp"
@@ -56,23 +55,4 @@
         app:layout_constraintEnd_toEndOf="@+id/comImage"
         app:layout_constraintTop_toTopOf="@+id/comImage"
         app:srcCompat="@drawable/gu" />
-
-=======
-        android:id="@+id/comHandImage"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        app:srcCompat="@drawable/gu"
-        tools:layout_editor_absoluteX="224dp"
-        tools:layout_editor_absoluteY="316dp" />
-
-    <ImageView
-        android:id="@+id/comImage"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/lose_kubo"
-        tools:layout_editor_absoluteY="387dp" />
->>>>>>> a21f1b3a7ac5bccd84f5ff98eb939dd4957cf4dd
 </androidx.constraintlayout.widget.ConstraintLayout>

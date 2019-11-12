@@ -50,7 +50,6 @@
 
     <ImageView
         android:id="@+id/imageView"
-<<<<<<< HEAD
         android:layout_width="250dp"
         android:layout_height="250dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,16 +58,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/kubo" />
-
-=======
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/IMG_3134" />
->>>>>>> a21f1b3a7ac5bccd84f5ff98eb939dd4957cf4dd
 </androidx.constraintlayout.widget.ConstraintLayout>
