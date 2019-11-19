@@ -13,6 +13,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -302,5 +304,41 @@ public class DeviceListActivity extends AppCompatActivity implements AdapterView
         intent.putExtra( EXTRAS_DEVICE_ADDRESS, device.getAddress() );
         setResult( Activity.RESULT_OK, intent );
         finish();
+    }
+
+    // オプションメニュー作成時の処理
+    @Override
+    public boolean onCreateOptionsMenu( Menu menu )
+    {
+        getMenuInflater().inflate( R.menu.activity_device_list, menu );
+        if( !mScanning )
+        {
+            menu.findItem( R.id.menuitem_stop ).setVisible( false );
+            menu.findItem( R.id.menuitem_scan ).setVisible( true );
+            menu.findItem( R.id.menuitem_progress ).setActionView( null );
+        }
+        else
+        {
+            menu.findItem( R.id.menuitem_stop ).setVisible( true );
+            menu.findItem( R.id.menuitem_scan ).setVisible( false );
+            menu.findItem( R.id.menuitem_progress ).setActionView( R.layout.actionbar_indeterminate_progress );
+        }
+        return true;
+    }
+
+    // オプションメニューのアイテム選択時の処理
+    @Override
+    public boolean onOptionsItemSelected( MenuItem item )
+    {
+        switch( item.getItemId() )
+        {
+            case R.id.menuitem_scan:
+                startScan();    // スキャンの開始
+                break;
+            case R.id.menuitem_stop:
+                stopScan();    // スキャンの停止
+                break;
+        }
+        return true;
     }
 }
