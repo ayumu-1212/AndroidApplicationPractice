@@ -2,6 +2,8 @@ package com.example.soundcakeprototype9;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
+import android.os.Build;
 import android.os.Bundle;
 
 import android.app.Activity;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     // 定数
     private static final int    REQUEST_ENABLEBLUETOOTH = 1; // Bluetooth機能の有効化要求時の識別コード
     private static final int    REQUEST_CONNECTDEVICE   = 2; // デバイス接続要求時の識別コード
+    private static final int PERMISSION_REQUEST_COARSE_LOCATION = 1;
 
     // メンバー変数
     private BluetoothAdapter mBluetoothAdapter;    // BluetoothAdapter : Bluetooth処理で必要
@@ -29,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+        {
+// Android M Permission check
+            if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_REQUEST_COARSE_LOCATION);
+            }
+        }
+
+
 
         // Android端末がBLEをサポートしてるかの確認
         if( !getPackageManager().hasSystemFeature( PackageManager.FEATURE_BLUETOOTH_LE ) )
@@ -46,6 +59,19 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText( this, R.string.bluetooth_is_not_supported, Toast.LENGTH_SHORT ).show();
             finish();    // アプリ終了宣言
             return;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSION_REQUEST_COARSE_LOCATION:
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                } else {
+                    Toast.makeText(this, R.string.BluetoothScan_need_Permissions, Toast.LENGTH_LONG).show();
+                }
+                break;
         }
     }
 
@@ -126,4 +152,8 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
+
+
+
+
 }
