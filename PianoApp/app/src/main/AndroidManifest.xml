@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.soundcakeprototype9">
-    <!-- BLEの機能を使用する宣言 -->
-    <uses-feature
-        android:name="android.hardware.bluetooth_le"
-        android:required="true" /> <!-- BLEの機能を使用するためのパーミッションの宣言 -->
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    package="com.example.pianoapp">
 
     <application
         android:allowBackup="true"
@@ -24,7 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DeviceListActivity"></activity>
     </application>
 
 </manifest>

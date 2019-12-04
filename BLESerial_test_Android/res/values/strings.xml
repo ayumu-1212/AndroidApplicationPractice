@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BLESerial_test_Android</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="title_activity_serial_com">SerialComActivity</string>
+
+    
+    <!-- Menu items -->
+    <string name="menu_scan">スキャンする</string>
+    <string name="menu_stop">スキャンを停止</string>
+    <string name="menu_refresh"></string>
+    
+</resources>
