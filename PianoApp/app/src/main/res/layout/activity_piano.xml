@@ -4,79 +4,316 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/piano1_1do"
-                android:layout_width="312dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:id="@+id/record_button"
+                style="?attr/buttonBarButtonStyle"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:background="#ff0000"
+                android:text="@string/rokuon"
+                android:textColor="#fff"
+                android:textSize="36sp"
+                android:textStyle="bold" />
 
             <Button
-                android:id="@+id/piano1_2re"
-                android:layout_width="312dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:id="@+id/stop_button"
+                style="?attr/buttonBarButtonStyle"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:background="#c0c0c0"
+                android:text="@string/teisi"
+                android:textColor="#FFFFFF"
+                android:textSize="36sp"
+                android:textStyle="bold" />
 
             <Button
-                android:id="@+id/piano1_3mi"
-                android:layout_width="312dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:id="@+id/send_button"
+                style="?attr/buttonBarButtonStyle"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:background="#03A9F4"
+                android:text="@string/sousin"
+                android:textColor="#FFFFFF"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/timer"
+                android:layout_margin="20dp"
+                android:textSize="60sp"
+                android:textColor="#00f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
             <Button
-                android:id="@+id/piano1_4fa"
-                android:layout_width="312dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/piano1_5so"
-                android:layout_width="312dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/piano1_6ra"
-                android:layout_width="312dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/piano1_7si"
-                android:layout_width="312dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/piano2_1do"
-                android:layout_width="312dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-
-            <Button
-                android:id="@+id/button16"
-                android:layout_width="312dp"
+                android:id="@+id/return_to_top"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_marginLeft="100dp"
+                android:layout_weight="1"
+                android:text="@string/return_to_top" />
         </LinearLayout>
-    </FrameLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scrollView">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/piano1_1do"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano1_2re"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano1_3mi"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano1_4fa"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano1_5so"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano1_6ra"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano1_7si"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano2_1do"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano2_2re"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano2_3mi"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano2_4fa"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano2_5so"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano2_6ra"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano2_7si"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+                            <Button
+                                android:id="@+id/piano3_1do"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano3_2re"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano3_3mi"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+                            <Button
+                                android:id="@+id/piano3_4fa"
+                                android:layout_width="80dp"
+                                android:layout_height="350dp"
+                                android:background="@drawable/button_border"
+                                style="?attr/buttonBarButtonStyle"/>
+
+
+                        </LinearLayout>
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <Button
+                                android:id="@+id/piano1_do_pound"
+                                android:layout_width="60dp"
+                                android:layout_height="200dp"
+                                android:layout_marginLeft="50dp"
+                                android:background="#000"
+                                android:text="" />
+
+                            <Button
+                                android:id="@+id/piano1_re_pound"
+                                android:layout_width="60dp"
+                                android:layout_height="200dp"
+                                android:layout_marginLeft="130dp"
+                                android:background="#000"
+                                android:text="" />
+
+                            <Button
+                                android:id="@+id/piano1_fa_pound"
+                                android:layout_width="60dp"
+                                android:layout_height="200dp"
+                                android:layout_marginLeft="290dp"
+                                android:background="#000"
+                                android:text="" />
+
+                            <Button
+                                android:id="@+id/piano1_so_pound"
+                                android:layout_width="60dp"
+                                android:layout_height="200dp"
+                                android:layout_marginLeft="370dp"
+                                android:background="#000"
+                                android:text="" />
+
+                            <Button
+                                android:id="@+id/piano1_ra_pound"
+                                android:layout_width="60dp"
+                                android:layout_height="200dp"
+                                android:layout_marginLeft="450dp"
+                                android:background="#000"
+                                android:text="" />
+                            <Button
+                                android:id="@+id/piano2_do_pound"
+                                android:layout_width="60dp"
+                                android:layout_height="200dp"
+                                android:layout_marginLeft="610dp"
+                                android:background="#000"
+                                android:text="" />
+
+                            <Button
+                                android:id="@+id/piano2_re_pound"
+                                android:layout_width="60dp"
+                                android:layout_height="200dp"
+                                android:layout_marginLeft="690dp"
+                                android:background="#000"
+                                android:text="" />
+
+                            <Button
+                                android:id="@+id/piano2_fa_pound"
+                                android:layout_width="60dp"
+                                android:layout_height="200dp"
+                                android:layout_marginLeft="850dp"
+                                android:background="#000"
+                                android:text="" />
+
+                            <Button
+                                android:id="@+id/piano2_so_pound"
+                                android:layout_width="60dp"
+                                android:layout_height="200dp"
+                                android:layout_marginLeft="930dp"
+                                android:background="#000"
+                                android:text="" />
+
+                            <Button
+                                android:id="@+id/piano2_ra_pound"
+                                android:layout_width="60dp"
+                                android:layout_height="200dp"
+                                android:layout_marginLeft="1010dp"
+                                android:background="#000"
+                                android:text=""
+                                android:textStyle="bold" />
+                            <Button
+                                android:id="@+id/piano3_do_pound"
+                                android:layout_width="60dp"
+                                android:layout_height="200dp"
+                                android:layout_marginLeft="1170dp"
+                                android:background="#000"
+                                android:text="" />
+
+                            <Button
+                                android:id="@+id/piano3_re_pound"
+                                android:layout_width="60dp"
+                                android:layout_height="200dp"
+                                android:layout_marginLeft="1250dp"
+                                android:background="#000"
+                                android:text="" />
+                        </RelativeLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </RelativeLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">PianoApp</string>
+    <string name="teisi">停止</string>
+    <string name="sousin">送信</string>
+    <string name="rokuon">録音</string>
+    <string name="soundCake">SoundCake</string>
+    <string name="selectMusic">SelectMusic</string>
+    <string name="playMusic">PlayMusic</string>
+    <string name="return_to_top">トップに戻る</string>
+    <string name="zero">"00:00.000"</string>
+    <string name="selectionmusic">曲を選んでね</string>
 </resources>

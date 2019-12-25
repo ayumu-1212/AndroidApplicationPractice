@@ -2,7 +2,9 @@ package com.example.pianoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.TouchDelegate;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     Button buttonDo;
     Piano pianoInstance;
 
+    int piano[][];
     Button[] buttons = new Button[8];
 
     @Override
@@ -22,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
         pianoInstance = new Piano(getApplicationContext());
 
         getViews();
-        setOnClicks();
+        setOnPianoClicks();
+        setOnRecordClicks();
+        setOnStopClicks();
+        setOnSendClicks();
     }
 
     private void getViews() {
@@ -36,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         buttons[7] = (Button) findViewById(R.id.piano2_1do);
     }
 
-    private void setOnClicks() {
+    private void setOnPianoClicks() {
         for (int i = 0; i < 8; i++) {
             final int index = i;
             buttons[index].setOnClickListener(new View.OnClickListener() {
@@ -47,4 +53,34 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
+
+    private void setOnRecordClicks(){
+        findViewById(R.id.record_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                piano = new int[2][];
+
+            }
+        });
+    }
+
+    private void setOnStopClicks(){
+        findViewById(R.id.stop_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+
+    private void setOnSendClicks(){
+        findViewById(R.id.send_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+
+
 }
